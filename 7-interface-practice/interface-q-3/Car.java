@@ -1,0 +1,27 @@
+package review.interface3;
+
+public class Car implements Comparable {
+    private String license;
+    private double kiloDriven;
+
+    public Car(String license, double kiloDriven) {
+        this.license = license;
+        this.kiloDriven = kiloDriven;
+    }
+
+    public String getLicense() {
+        return license;
+    }
+
+    public double getKiloDriven() {
+        return kiloDriven;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Car other = (Car) o;
+        if (this.kiloDriven < other.kiloDriven) return -1;
+        if (this.kiloDriven > other.kiloDriven) return 1;
+        return 0;
+    }
+}
